@@ -2,3 +2,8 @@
 @import '../styles/abstracts/variables';
 @import '../styles/abstracts/mixins';
 @import '../styles/base/typography'
+
+// Hide Next.js dev indicator
+// #__next-build-watcher {
+//   display: none !important;
+// }
