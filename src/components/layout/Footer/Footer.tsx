@@ -1,14 +1,21 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./Footer.module.scss";
 import { usePathname } from "next/navigation";
 import { RiFacebookBoxFill } from "react-icons/ri";
 import { FaTwitter, FaInstagram } from "react-icons/fa";
+import styles from "./Footer.module.scss";
 
-export const Footer = () => {
+type NavLink = {
+  href: string;
+  label: string;
+};
+
+export const Footer = (): JSX.Element => {
   const pathname = usePathname();
-  const navLinks = [
+
+  const navLinks: NavLink[] = [
     { href: "/", label: "HOME" },
     { href: "/headphones", label: "HEADPHONES" },
     { href: "/speaker", label: "SPEAKERS" },
@@ -16,7 +23,7 @@ export const Footer = () => {
   ];
 
   // Check if link is active
-  const isActive = (href) => {
+  const isActive = (href: string): boolean => {
     if (href === "/") {
       return pathname === "/";
     }
@@ -24,14 +31,14 @@ export const Footer = () => {
   };
 
   return (
-    
     <div className={styles.footerBody}>
-        <div className='container'>
-            <div className={styles.footerLine}></div>
-        </div>
+      <div className="container">
+        <div className={styles.footerLine}></div>
+      </div>
+
       <div className={`container ${styles.footerP}`}>
         <div className="d-md-flex text-center text-sm-start justify-content-between">
-          <Image src="/assets/logo.svg" alt="logo" width="143" height="25" />
+          <Image src="/assets/logo.svg" alt="logo" width={143} height={25} />
 
           <ul className={styles.footerLinkG}>
             {navLinks.map((link) => (
@@ -49,7 +56,7 @@ export const Footer = () => {
           </ul>
         </div>
 
-        <div className={` d-flex justify-content-between ${styles.contextF}`}>
+        <div className={`d-flex justify-content-between ${styles.contextF}`}>
           <p className={styles.fTexts}>
             Audiophile is an all in one stop to fulfill your audio needs. We're
             a small team of music lovers and sound specialists who are devoted
@@ -57,34 +64,31 @@ export const Footer = () => {
             our demo facility - we’re open 7 days a week.
           </p>
 
-          {/* socials */}
+          {/* socials (desktop) */}
           <div
             className={`d-md-flex d-none align-items-end ${styles.socialIconCon}`}
           >
-            {/* facebook */}
             <a
               className={styles.socialLink}
-              href="https://github.com/Odusami?tab=repositories"
+              href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
             >
               <RiFacebookBoxFill className={styles.socialIcon} />
             </a>
 
-            {/* twitter */}
             <a
               className={styles.socialLink}
-              href="https://github.com/Odusami?tab=repositories"
+              href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaTwitter className={styles.socialIcon} />
             </a>
 
-            {/* instagram */}
             <a
               className={styles.socialLink}
-              href="https://github.com/Odusami?tab=repositories"
+              href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -93,36 +97,38 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className={`d-sm-flex justify-content-between align-items-center ${styles.footerBP}`}>
-          <p className={`${styles.fTexts} ${styles.fTexts2}`}>Copyright 2021. All Rights Reserved</p>
-          {/* socials */}
+        <div
+          className={`d-sm-flex justify-content-between align-items-center ${styles.footerBP}`}
+        >
+          <p className={`${styles.fTexts} ${styles.fTexts2}`}>
+            Copyright 2021. All Rights Reserved
+          </p>
+
+          {/* socials (mobile) */}
           <div
-            className={`justify-content-center d-flex d-md-none  ${styles.socialIconCon}`}
+            className={`justify-content-center d-flex d-md-none ${styles.socialIconCon}`}
           >
-            {/* facebook */}
             <a
               className={styles.socialLink}
-              href="https://github.com/Odusami?tab=repositories"
+              href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
             >
               <RiFacebookBoxFill className={styles.socialIcon} />
             </a>
 
-            {/* twitter */}
             <a
               className={styles.socialLink}
-              href="https://github.com/Odusami?tab=repositories"
+              href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaTwitter className={styles.socialIcon} />
             </a>
 
-            {/* instagram */}
             <a
               className={styles.socialLink}
-              href="https://github.com/Odusami?tab=repositories"
+              href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
             >
