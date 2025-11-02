@@ -1,0 +1,123 @@
+"use client";
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import styles from "./Header.module.scss";
+
+export const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const pathname = usePathname();
+  const navLinks = [
+    { href: "/", label: "HOME" },
+    { href: "/headphones", label: "HEADPHONES" },
+    { href: "/speaker", label: "SPEAKERS" },
+    { href: "/earphones", label: "EARPHONES" },
+  ];
+
+  // Check if link is active
+  const isActive = (href) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname.startsWith(href);
+  };
+
+  return (
+    <nav className={styles.navbar}>
+      <div className={`container ${styles.navContainer}`}>
+        <Link href="/" className="navbar-brand">
+          <Image
+            className={styles.logo}
+            src="/assets/logo.svg"
+            alt="logo"
+            width="143"
+            height="25"
+          />
+        </Link>
+        <ul className={`navbar-nav ${styles.navGroupLink}`}>
+          {navLinks.map((link) => (
+            <li key={link.href} className="nav-item">
+              <Link
+                href={link.href}
+                className={`nav-link ${
+                  isActive(link.href) ? 'active' : ""
+                } ${styles.navLink}`}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <div className={styles.navActions}>
+          <Link href="/cart">
+            <Image
+              className={styles.cartIcon}
+              src="/assets/carts.svg"
+              alt="cart"
+              width="23"
+              height="20"
+            />
+          </Link>
+        </div>
+      </div>
+
+      {/* mobile nav */}
+      <div className={`container ${styles.mobileNavContainer}`}>
+        <button
+          className={`navbar-toggler ${styles.hamburgerBtn}`}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <Image
+            className={styles.hamburger}
+            src="/assets/hamburger.svg"
+            alt='hamburger'
+            width="16"
+            height="15"
+          />
+        </button>
+
+        <Link href="/" className="navbar-brand me-sm-auto ">
+          <Image
+            className={styles.logo}
+            src="/assets/logo.svg"
+            alt="logo"
+            width="143"
+            height="25"
+          />
+        </Link>
+
+        <Link href="/cart">
+          <Image
+            className={styles.cartIcon}
+            src="/assets/carts.svg"
+            alt="cart"
+            width="23"
+            height="20"
+          />
+        </Link>
+      </div>
+
+      {isOpen && (
+   
+             <ul className={` container navbar-nav ${styles.mobileNavGL} ${styles.navGroupLink}`}>
+          {navLinks.map((link) => (
+            <li key={link.href} className="nav-item">
+              <Link
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className={`nav-link ${
+                  isActive(link.href) ? 'active' : ""
+                } ${styles.navLink}`}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </nav>
+  );
+};

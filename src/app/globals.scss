@@ -1,9 +1,16 @@
 @import "bootstrap/scss/bootstrap";
 @import '../styles/abstracts/variables';
 @import '../styles/abstracts/mixins';
-@import '../styles/base/typography'
+@import '../styles/base/typography';
 
-// Hide Next.js dev indicator
-// #__next-build-watcher {
-//   display: none !important;
-// }
+.container{
+    padding: 0;
+    @media (max-width:576px) {
+        padding: 0 24px;
+    }
+}
+
+// active style for nav links
+.active {
+  color: $color-tertiary !important;
+}

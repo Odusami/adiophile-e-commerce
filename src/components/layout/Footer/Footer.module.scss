@@ -1,0 +1,106 @@
+@use "../../../styles/abstracts/variables" as *;
+.footerBody {
+  background: $color-primary-100;
+}
+.footerLine{
+    width: 101px;
+    height: 4px;
+    background: $color-tertiary;
+      @media (max-width: 576px) {
+        margin-left: auto;
+        margin-right: auto;
+  }
+
+}
+.footerP{
+     padding-top: 75px;
+      @media (max-width: 768px) {
+    padding-top: 60px;   
+  }
+    @media (max-width: 576px) {
+    padding-top: 52px;
+  }
+}
+.footerLinkG {
+  display: flex;
+  text-decoration: none;
+  list-style: none;
+  gap: 34px;
+  padding: 0;
+  margin: 0;
+  @media (max-width: 768px) {
+    gap: 16px;
+    margin-top: 32px;
+  }
+  @media (max-width: 576px) {
+    flex-direction: column;
+    margin-top: 48px;
+  }
+}
+.footerLinkList {
+  color: $color-secondary;
+
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &:hover {
+    color: $color-tertiary-100;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+.contextF {
+  margin-top: 36px !important;
+  margin-bottom: 56px !important;
+  @media (max-width: 768px) {
+   margin-top: 32px !important;
+  margin-bottom: 80px !important;
+  }
+  @media (max-width: 576px) {
+    margin-top: 48px !important;
+  margin-bottom: 48px !important;
+  }
+}
+.footerBP{
+     padding-bottom: 48px;
+     @media (max-width: 768px) {
+    padding-bottom: 46px;
+  }
+  @media (max-width: 576px) {
+    padding-bottom: 38px;
+  }
+}
+.fTexts {
+  color: $color-secondary;
+  opacity: 50%;
+  max-width: 540px;
+  @media (max-width: 576px) {
+    text-align: center;
+  }
+}
+.fTexts2{
+     @media (max-width: 576px) {
+    margin-bottom: 48px;
+
+  }
+    
+}
+.socialIconCon {
+  gap: 16px;
+}
+.socialLink {
+  text-decoration: none;
+  color: $color-secondary;
+  cursor: default;
+  transition: color 0.3s;
+
+  &:hover {
+    color: $color-tertiary-100;
+  }
+}
+.socialIcon {
+  font-size: 24px !important;
+  cursor: pointer !important;
+}
