@@ -1,5 +1,6 @@
 import ImageFrame from "@/components/ImageFrame/ImageFrame"
 import db from '../../public/assets/db.json'
+import ProductImgFloat from "@/components/ProductImgFloat/ProductImgFloat";
 
 export default function Home() {
   const productImg = db.data.find((data)=> data.id == 1)
@@ -10,6 +11,7 @@ export default function Home() {
       
 
       <h1>Hello world</h1>
+     
     </div>
   );
 }
