@@ -1,13 +1,19 @@
 @import "bootstrap/scss/bootstrap";
-@import '../styles/abstracts/variables';
-@import '../styles/abstracts/mixins';
-@import '../styles/base/typography';
+@import "../styles/abstracts/variables";
+@import "../styles/abstracts/mixins";
+@import "../styles/base/typography";
 
-.container{
-    padding: 0;
-    @media (max-width:576px) {
-        padding: 0 24px;
-    }
+.container {
+  padding-left: 100px !important;
+  padding-right: 100px !important;
+  @media (max-width: 992px) {
+    padding-left: 38px !important;
+    padding-right: 38px !important;
+  }
+  @media (max-width: 768px) {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
 }
 
 // active style for nav links

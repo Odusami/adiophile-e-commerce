@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { RiFacebookBoxFill } from "react-icons/ri";
 import { FaTwitter, FaInstagram } from "react-icons/fa";
 import styles from "./Footer.module.scss";
+import { JSX } from "react";
 
 type NavLink = {
   href: string;

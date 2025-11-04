@@ -1,0 +1,58 @@
+@use "../../styles/abstracts/variables" as *;
+.aboutSecMb {
+  margin-bottom: 160px;
+    @media (max-width:576px) {
+      margin-bottom: 120px;
+
+  }
+}
+.textContainer {
+  width: 100%;
+  max-width: 445px;
+  aspect-ratio: 445 / 295;
+   @media (max-width: 768px) {
+    text-align: center;
+    width: 100%;
+    max-width: 573px;
+    aspect-ratio: 573 / 270;
+  }
+   @media (max-width: 376px) {
+    width: 100%;
+    max-width: 573px;
+    aspect-ratio: 573 / 400;
+  }
+    @media (max-width: 260px) {
+    width: 100%;
+    max-width: 573px;
+    aspect-ratio: 573 / 500;
+  }
+
+}
+.aboutHead {
+  margin-bottom: 32px;
+  span {
+    color: $color-tertiary;
+  }
+}
+.picContainer {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  aspect-ratio: 540 / 588;
+
+  border-radius: 8px;
+  overflow: hidden;
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 689px;
+    aspect-ratio: 689 / 300;
+  }
+  @media (max-width: 460px) {
+    width: 100%;
+    max-width: 327px;
+    aspect-ratio: 327 / 300;
+  }
+  img {
+    object-fit: cover;
+  }
+}
