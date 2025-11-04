@@ -1,0 +1,53 @@
+@use "../../styles/abstracts/variables" as *;
+.imgContainer {
+    position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $color-secondary-200;
+  width: 100%;
+  max-width: 540px;
+  aspect-ratio: 540 / 588;
+  border-radius: 8px;
+  overflow: hidden;
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 689px;
+    aspect-ratio: 689 / 352;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media (max-width: 460px) {
+    width: 100%;
+    max-width: 327px;
+    aspect-ratio: 327 / 327;
+  }
+  img {
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+/* Skeleton loader */
+.skeleton {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: linear-gradient(
+    90deg,
+    #e0e0e0 25%,
+    #f0f0f0 37%,
+    #e0e0e0 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.2s infinite;
+}
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
