@@ -1,0 +1,20 @@
+@use '../../styles/abstracts/variables' as *;
+.buttonC{
+    text-transform: uppercase;
+    border: none;
+    width: 160px;
+    height: 48px;
+    background: $color-tertiary;
+    color: $color-secondary;
+    &:hover{
+        background: $color-tertiary-100;
+    }
+    &:focus{
+        border: 1.5px solid $color-primary;
+    }
+
+}
+.btnFill{
+    width: 100% !important;
+    display: block !important;
+}

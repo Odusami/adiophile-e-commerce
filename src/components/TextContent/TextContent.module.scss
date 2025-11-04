@@ -1,0 +1,41 @@
+@use "../../styles/abstracts/variables" as *;
+.textContentBody {
+  width: 100%;
+  max-width: 445px;
+  aspect-ratio: 445 / 295;
+  @media (max-width: 768px) {
+    text-align: center;
+    width: 100%;
+    max-width: 572px;
+    aspect-ratio: 572 / 302;
+  }
+  @media (max-width: 460px) {
+    text-align: center;
+    width: 100%;
+    max-width: 327px;
+    aspect-ratio: 327 / 340;
+  }
+  h6 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 10px;
+    color: $color-tertiary;
+    margin-bottom: 16px;
+    @media (max-width: 576px) {
+      margin-bottom: 24px;
+    }
+  }
+  h2 {
+    margin-bottom: 32px;
+    @media (max-width: 576px) {
+      margin-bottom: 24px;
+    }
+  }
+  p {
+    margin-bottom: 40px;
+    @media (max-width: 576px) {
+      margin-bottom: 24px;
+    }
+  }
+}
